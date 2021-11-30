@@ -30,8 +30,3 @@ class _MyListViewBuilderState extends State<MyListViewBuilder> {
             child: Text("${dataList[index]}")),
       );
 }
-
-@override
-Widget build(BuildContext context) {
-  return Container();
-}

@@ -11,7 +11,7 @@ class _MyListViewState extends State<MyListView> {
   List<String> dataList = [
     "Prince",
     "Urvish",
-    "Darshn",
+    "Darshan",
     "Parth",
     "Rajan",
     "Kishan"
@@ -34,7 +34,7 @@ class _MyListViewState extends State<MyListView> {
         title: Container(
             color: Colors.lime,
             padding: EdgeInsets.all(10),
-            child: Text("${element}")),
+            child: Text("$element")),
       ));
     });
     for (var item in dataList) {

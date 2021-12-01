@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'list_view.dart';
 import 'listview_builder.dart';
+import 'my_gridview.dart';
+import 'my_gridview_builder.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lime,
       ),
       home: MyApps(),
     );
@@ -33,19 +35,31 @@ class _MyAppsState extends State<MyApps> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.lime,
           bottom: TabBar(tabs: [
-            Tab(icon: Icon(Icons.list_alt)),
             Tab(
-              icon: Icon(Icons.list_rounded),
+                icon: Icon(
+              Icons.list_alt,
+            )),
+            Tab(
+              icon: Icon(
+                Icons.list_rounded,
+              ),
             ),
             Tab(
-              icon: Icon(Icons.grid_3x3),
+              icon: Icon(
+                Icons.grid_3x3,
+              ),
             ),
+            Tab(
+                icon: Icon(
+              Icons.grid_4x4_rounded,
+            )),
           ]),
-          title: Text("Diffrent types of View"),
+          title: Text("Diffrent types of View", style: TextStyle(fontSize: 23)),
           centerTitle: true,
         ),
         body: TabBarView(
@@ -60,7 +74,10 @@ class _MyAppsState extends State<MyApps> {
                                   children: [],
                                 )));
                   },
-                  child: Text("ListView", style: TextStyle(fontSize: 20))),
+                  child: Text("ListView",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ))),
             ),
             Container(
               child: TextButton(
@@ -70,8 +87,21 @@ class _MyAppsState extends State<MyApps> {
                         MaterialPageRoute(
                             builder: (context) => MyListViewBuilder()));
                   },
-                  child:
-                      Text("ListView Builder", style: TextStyle(fontSize: 20))),
+                  child: Text("ListView Builder",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ))),
+            ),
+            Container(
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyGridList()));
+                  },
+                  child: Text("GridList",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ))),
             ),
             Container(
               child: TextButton(
@@ -79,10 +109,10 @@ class _MyAppsState extends State<MyApps> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MyListViewBuilder()));
+                            builder: (context) => MyGridViewBuilder()));
                   },
                   child:
-                      Text("ListView Builder", style: TextStyle(fontSize: 20))),
+                      Text("GridViewBuilder", style: TextStyle(fontSize: 20))),
             ),
           ],
         ),

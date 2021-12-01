@@ -20,11 +20,11 @@ class _MyListViewState extends State<MyListView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Person Name"),
+          title: Text("Friends Name"),
         ),
         body: Container(
             padding: EdgeInsets.all(20),
-            child: MyListView(children: displayList())));
+            child: ListView(children: displayList())));
   }
 
   List<Widget> displayList() {
@@ -32,9 +32,12 @@ class _MyListViewState extends State<MyListView> {
     dataList.forEach((element) {
       list.add(ListTile(
         title: Container(
-            color: Colors.lime,
-            padding: EdgeInsets.all(10),
-            child: Text("$element")),
+          padding: EdgeInsets.all(10),
+          color: Colors.lime,
+          child: Text(
+            "$element",
+          ),
+        ),
       ));
     });
     for (var item in dataList) {
@@ -42,9 +45,4 @@ class _MyListViewState extends State<MyListView> {
     }
     return list;
   }
-}
-
-@override
-Widget build(BuildContext context) {
-  return Container();
 }

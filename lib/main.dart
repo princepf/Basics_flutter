@@ -47,7 +47,7 @@ class _MyAppsState extends State<MyApps> {
             )),
             Tab(
               icon: Icon(
-                Icons.list_rounded,
+                Icons.list,
               ),
             ),
             Tab(

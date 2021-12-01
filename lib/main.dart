@@ -31,6 +31,7 @@ class MyApps extends StatefulWidget {
 }
 
 class _MyAppsState extends State<MyApps> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

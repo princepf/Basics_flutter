@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'buttons.dart';
 import 'list_view.dart';
 import 'listview_builder.dart';
 import 'my_gridview.dart';
@@ -62,6 +63,31 @@ class _MyAppsState extends State<MyApps> {
           ]),
           title: Text("Diffrent types of View", style: TextStyle(fontSize: 23)),
           centerTitle: true,
+        ),
+        //drawer
+        drawer: SafeArea(
+          child: Drawer(
+            child: Container(
+              color: Colors.lime,
+              padding: EdgeInsets.all(20),
+              child: ListView(children: [
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ButtonsScreen()));
+                  },
+                  trailing:
+                      (Icon(Icons.check_circle_outline, color: Colors.black)),
+                  title: Text("CheckBox",
+                      style: TextStyle(
+                        fontSize: 20,
+                      )),
+                ),
+              ]),
+            ),
+          ),
         ),
         body: TabBarView(
           children: [

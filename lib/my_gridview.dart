@@ -30,6 +30,7 @@ class _MyGridListState extends State<MyGridList> {
     return Scaffold(
         appBar: AppBar(
           title: Text("GridList"),
+          centerTitle: true,
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -52,21 +53,4 @@ class _MyGridListState extends State<MyGridList> {
           ),
         ));
   }
-
-  // List<Widget> displayList() {
-  //   List<Widget> list = [];
-  //   _dataList.forEach((element) {
-  //     list.add(ListTile(
-  //       title: Container(
-  //         child: Text("${element}"),
-  //         padding: EdgeInsets.all(20),
-  //         alignment: Alignment.center,
-  //         decoration: BoxDecoration(
-  //           color: Colors.amber,
-  //         ),
-  //       ),
-  //     ));
-  //   });
-  //   return list;
-  // }
 }

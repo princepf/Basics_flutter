@@ -31,9 +31,32 @@ class _MyGridViewBuilderState extends State<MyGridViewBuilder> {
     return Scaffold(
       appBar: AppBar(
         title: Text("GridViewBuilder"),
+        centerTitle: true,
       ),
-      body: Column(
-        children: [],
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Expanded(
+                child: GridView.builder(
+                    itemCount: _dataList.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        childAspectRatio: 1),
+                    itemBuilder: (BuildContext context, index) {
+                      return Container(
+                        height: 100,
+                        width: 100,
+                        color: Colors.lime,
+                        child: Center(
+                          child: Text("${_dataList[index]}"),
+                        ),
+                      );
+                    }))
+          ],
+        ),
       ),
     );
   }

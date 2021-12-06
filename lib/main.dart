@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'buttons.dart';
 import 'list_view.dart';
 import 'listview_builder.dart';
 import 'my_gridview.dart';
 import 'my_gridview_builder.dart';
+import 'switch_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -80,7 +80,19 @@ class _MyAppsState extends State<MyApps> {
                   },
                   trailing:
                       (Icon(Icons.check_circle_outline, color: Colors.black)),
-                  title: Text("CheckBox",
+                  title: Text("CheckBox RadioButton",
+                      style: TextStyle(
+                        fontSize: 20,
+                      )),
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SwitchPage()));
+                  },
+                  trailing:
+                      (Icon(Icons.switch_left_outlined, color: Colors.black)),
+                  title: Text("Switch",
                       style: TextStyle(
                         fontSize: 20,
                       )),

@@ -33,6 +33,12 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "CheckBox RadioButton",
+            textAlign: TextAlign.center,
+          ),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
@@ -106,7 +112,11 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                                 call(val);
                               });
                             }),
-                        Text("Male")
+                        Text("Male",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ],
                     ),
                     Row(
@@ -119,7 +129,11 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                                 call(val);
                               });
                             }),
-                        Text("Female")
+                        Text("Female",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ],
                     ),
                     Row(
@@ -132,7 +146,11 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                                 call(val);
                               });
                             }),
-                        Text("Custom")
+                        Text("Custom",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ))
                       ],
                     )
                   ],

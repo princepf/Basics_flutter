@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class SwitchPage extends StatefulWidget {
   SwitchPage({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _SwitchPageState extends State<SwitchPage> {
               trailing: Switch(
                   value: !isDelete,
                   onChanged: (bool flag) {
-                    setState(() => isDelete = !flag);
+                    setState(() => isDelete = !isDelete);
                     print(flag);
                   }),
             ),
@@ -95,11 +96,13 @@ class _SwitchPageState extends State<SwitchPage> {
                   }
                 }),
             ListTile(
-              title: Text("Date is - ${date}",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  )),
+              title: Text(
+                "Date is - ${DateFormat('dd-MM-yyyy').format(date)} ",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               onTap: () async {
                 var seletedDate = await showDatePicker(
                     context: context,
@@ -133,7 +136,8 @@ class DeleteAlert extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                   child: Text("Cancle")),
               TextButton(
-                  onPressed: () => Navigator.pop(context), child: Text("Ok")),
+                  onPressed: () => Navigator.pop(context, true),
+                  child: Text("Ok")),
             ],
           )
         : CupertinoAlertDialog(
@@ -144,7 +148,8 @@ class DeleteAlert extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                   child: Text("Cancle")),
               TextButton(
-                  onPressed: () => Navigator.pop(context), child: Text("Ok")),
+                  onPressed: () => Navigator.pop(context, true),
+                  child: Text("Ok")),
             ],
           );
   }
